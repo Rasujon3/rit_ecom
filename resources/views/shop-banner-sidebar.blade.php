@@ -24,7 +24,7 @@
 
               <!-- Start of Shop Main Content -->
               <div class="main-content">
-                  @include('shop.nav')
+{{--                  @include('shop.nav')--}}
                   <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
                       @forelse($products as $product)
                           <div class="product-wrap">
@@ -84,7 +84,7 @@
                       @endforelse
                   </div>
 
-                  @include('shop.paginate')
+{{--                  @include('shop.paginate')--}}
               </div>
               <!-- End of Shop Main Content -->
             </div>

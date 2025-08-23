@@ -65,23 +65,23 @@
                     action="{{ route('search.products') }}"
                     class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper"
                 >
-                    <div class="select-box">
-                        <select id="category" name="category" class="pb-0">
-                            <option value="">All Categories</option>
-                            <option value="4">Fashion</option>
-                            <option value="5">Furniture</option>
-                            <option value="6">Shoes</option>
-                            <option value="7">Sports</option>
-                            <option value="8">Games</option>
-                            <option value="9">Computers</option>
-                            <option value="10">Electronics</option>
-                            <option value="11">Kitchen</option>
-                            <option value="12">Clothing</option>
-                        </select>
-                    </div>
+{{--                    <div class="select-box">--}}
+{{--                        <select id="category" name="category" class="pb-0">--}}
+{{--                            <option value="">All Categories</option>--}}
+{{--                            <option value="4">Fashion</option>--}}
+{{--                            <option value="5">Furniture</option>--}}
+{{--                            <option value="6">Shoes</option>--}}
+{{--                            <option value="7">Sports</option>--}}
+{{--                            <option value="8">Games</option>--}}
+{{--                            <option value="9">Computers</option>--}}
+{{--                            <option value="10">Electronics</option>--}}
+{{--                            <option value="11">Kitchen</option>--}}
+{{--                            <option value="12">Clothing</option>--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
                     <input
                         type="text"
-                        class="form-control"
+                        class="form-control search_input"
                         name="search"
                         id="search"
                         placeholder="Search in..."
@@ -138,6 +138,14 @@
         </div>
     </div>
 </header>
+
+<style>
+    .search_input {
+        border-top: 2px solid #fe7c00 !important;
+        border-left: 2px solid #fe7c00 !important;
+        border-bottom: 2px solid #fe7c00 !important;
+    }
+</style>
 
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 

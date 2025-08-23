@@ -52,10 +52,10 @@ class PageController extends Controller
 
     public function shopBannerSidebar(Request $request)
     {
-        $selectedCategory = $request->input('category', 'Umbrellas'); // default category
-
         // Fetch category list from session (set earlier in middleware)
         $categories = Session::get('home_categories', []);
+        $firstCat = count($categories) > 0 ? $categories[0]['Category'] : 'Mobile';
+        $selectedCategory = $request->input('category', $firstCat); // default category
 
         // Fetch products from API
         $productResponse = Http::asForm()->post(config('api.url') . 'api/category_wise_prodict.php', [
@@ -81,7 +81,7 @@ class PageController extends Controller
             $response = Http::get(config('api.url') . 'api/product_details2.php', [
                 'product_id' => $productId
             ]);
-            
+
             // dd('$response',$response);
             // dd('$response->successful()',$response->successful());
             // dd('error',$response['error']);
@@ -135,10 +135,12 @@ class PageController extends Controller
     {
         $cart = session()->get('cart', []);
         $cartCount = count($cart);
-        if ($cartCount === 0) {
-            return redirect()->route('cart')->with('error', 'Your cart is empty.');
+        $cartSubtotal = 0;
+
+        if ($cartCount > 0) {
+            $cartSubtotal = array_sum(array_column($cart, 'price'));
         }
-        $cartSubtotal = array_sum(array_column($cart, 'price'));
+
         return view('cart', compact('cart', 'cartCount', 'cartSubtotal'));
     }
 

@@ -8,17 +8,22 @@
 
     <div class="dropdown-box">
         <ul class="menu vertical-menu category-menu" style="max-height: 510px; overflow-y: auto;">
-            @foreach($categories as $cat)
-                <li>
-                    <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
-                        <img src="{{ config('api.url') . $cat['Image'] }}" alt="{{ $cat['Category'] }}" width="20" class="mr-2" style="object-fit: contain;">
-                        {{ $cat['Category'] }}
-                    </a>
-                </li>
-            @endforeach
+            @if(count($categories) > 0)
+                @php
+                    $firstCat = $categories[0]['Category'] ?? '';
+                @endphp
+                @foreach($categories as $cat)
+                    <li>
+                        <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
+                            <img src="{{ config('api.url') . $cat['Image'] }}" alt="{{ $cat['Category'] }}" width="20" class="mr-2" style="object-fit: contain;">
+                            {{ $cat['Category'] }}
+                        </a>
+                    </li>
+                @endforeach
+            @endif
 
             <li>
-                <a href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}" class="font-weight-bold text-uppercase ls-25">
+                <a href="{{ route('shopFullwidthBanner', ['category' => $firstCat]) }}" class="font-weight-bold text-uppercase ls-25">
                     View All Categories <i class="w-icon-angle-right"></i>
                 </a>
             </li>
