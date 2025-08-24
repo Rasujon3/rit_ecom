@@ -73,27 +73,18 @@ class PageController extends Controller
 
     public function productDetails(Request $request)
     {
-        $productId = $request->query('product_id'); // URL থেকে product_id
-        // dd('$productId',$productId);
+        $productId = $request->query('product_id');
 
         $product = null;
         if ($productId) {
-            $response = Http::get(config('api.url') . 'api/product_details2.php', [
+            $response = Http::asForm()->post(config('api.url') . 'api/product_details.php', [
                 'product_id' => $productId
             ]);
-
-            // dd('$response',$response);
-            // dd('$response->successful()',$response->successful());
-            // dd('error',$response['error']);
 
             if ($response->successful() && $response['error'] == 0) {
                 $product = $response->json();
             }
         }
-
-        // if (!$product || empty($product['title'])) {
-        //     abort(404, 'Product not found');
-        // }
 
         return view('product-details', compact('product','productId'));
     }

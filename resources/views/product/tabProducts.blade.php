@@ -5,6 +5,7 @@
             >Description</a
             >
         </li>
+        {{--
         <li class="nav-item">
             <a href="#product-tab-specification" class="nav-link"
             >Specification</a
@@ -20,6 +21,7 @@
             >Customer Reviews (3)</a
             >
         </li>
+        --}}
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="product-tab-description">
@@ -40,17 +42,14 @@
                         <figure class="banner-media">
                             <a href="#">
                                 <img
-                                    src="{{ asset('assets/images/products/video-banner-610x300.jpg') }}"
+                                    src="{{ $product['image'] ? config('api.url') .$product['image'] : asset('assets/images/products/video-banner-610x300.jpg') }}"
                                     alt="banner"
                                     width="610"
                                     height="300"
                                     style="background-color: #bebebe"
                                 />
                             </a>
-                            <a
-                                class="btn-play-video btn-iframe"
-                                href="{{ asset('assets/video/memory-of-a-woman.mp4') }}"
-                            ></a>
+
                         </figure>
                     </div>
                 </div>

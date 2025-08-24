@@ -41,183 +41,189 @@
         </nav>
         <!-- End of Breadcrumb -->
 
-        <!-- Start of Page Content -->
-        <div class="page-content">
-          <div class="container">
-            <div class="row gutter-lg">
-              <div class="main-content">
-                <div class="product product-single row">
-                  <div class="col-md-6 mb-6">
-                    <div class="product-gallery product-gallery-sticky">
-                      <div
-                        class="swiper-container product-single-swiper swiper-theme nav-inner"
-                        data-swiper-options="{
-                                            'navigation': {
-                                                'nextEl': '.swiper-button-next',
-                                                'prevEl': '.swiper-button-prev'
-                                            }
-                                        }"
-                      >
-                        <!--@include('product.productShowingSection')-->
+        @if($product)
+            <!-- Start of Page Content -->
+            <div class="page-content">
+                <div class="container">
+                    <div class="row gutter-lg">
+                        <div class="main-content">
+                            <div class="product product-single row">
+                                <div class="col-md-6 mb-6">
+                                    <div class="product-gallery product-gallery-sticky">
+                                        <div
+                                            class="swiper-container product-single-swiper swiper-theme nav-inner"
+                                            data-swiper-options="{
+                                                'navigation': {
+                                                    'nextEl': '.swiper-button-next',
+                                                    'prevEl': '.swiper-button-prev'
+                                                }
+                                            }"
+                                        >
+                                            <!--@include('product.productShowingSection')-->
 
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button>
-                        <a
-                          href="#"
-                          class="product-gallery-btn product-image-full"
-                          ><i class="w-icon-zoom"></i>
-                        </a>
-                      </div>
-                      <div
-                        class="product-thumbs-wrap swiper-container"
-                        data-swiper-options="{
-                                            'navigation': {
-                                                'nextEl': '.swiper-button-next',
-                                                'prevEl': '.swiper-button-prev'
-                                            }
-                                        }"
-                      >
-{{--                        @include('product.productVarients')--}}
-                      </div>
+                                            <button class="swiper-button-next"></button>
+                                            <button class="swiper-button-prev"></button>
+                                            <a
+                                                href="#"
+                                                class="product-gallery-btn product-image-full"
+                                            ><i class="w-icon-zoom"></i>
+                                            </a>
+                                        </div>
+                                        <div
+                                            class="product-thumbs-wrap swiper-container"
+                                            data-swiper-options="{
+                                                'navigation': {
+                                                    'nextEl': '.swiper-button-next',
+                                                    'prevEl': '.swiper-button-prev'
+                                                }
+                                            }"
+                                        >
+                                            {{--                        @include('product.productVarients')--}}
+                                        </div>
+                                    </div>
+                                </div>
+                                @if(!$product || empty($product['title']))
+                                    <p>Nothing found.</p>
+                                @else
+                                    <div class="col-md-6 mb-4 mb-md-6">
+                                        <div
+                                            class="product-details"
+                                            data-sticky-options="{'minWidth': 767}"
+                                        >
+                                            <h1 class="product-title">
+                                                {{ $product['title'] }}
+                                            </h1>
+                                            <div class="product-bm-wrapper">
+                                                <figure class="brand">
+                                                    <img
+                                                        src="{{ config('api.url') .$product['image'] }}"
+                                                        alt="Brand"
+                                                        width="102"
+                                                        height="48"
+                                                    />
+                                                </figure>
+                                                <div class="product-meta">
+                                                    <div class="product-categories">
+                                                        Category:
+                                                        <span class="product-category"
+                                                        ><a href="#">{{ $product['category'] }}</a></span
+                                                        >
+                                                    </div>
+                                                    <!--
+                                                  <div class="product-sku">
+                                                    SKU: <span>MS46891340</span>
+                                                  </div>
+                                                    -->
+                                                </div>
+                                            </div>
+
+                                            <hr class="product-divider" />
+
+                                            <div class="product-price">
+                                                <ins class="new-price">৳ {{ $product['price'] }}</ins>
+                                            </div>
+
+                                            <div class="ratings-container">
+                                                <div class="ratings-full">
+                                                    <span class="ratings" style="width: 80%"></span>
+                                                    <span class="tooltiptext tooltip-top"></span>
+                                                </div>
+                                                <a
+                                                    href="#"
+                                                    class="rating-reviews scroll-to"
+                                                >(3 Reviews)</a
+                                                >
+                                            </div>
+                                            @if(isset($product['pro_price']))
+                                                <div class="product-price">
+                                                    PB: <ins class="new-price">৳ {{ $product['pro_price'] }}</ins>
+                                                </div>
+                                            @endif
+
+                                            <div class="product-short-desc">
+                                                {{ $product['details'] }}
+                                            </div>
+
+                                            <hr class="product-divider" />
+
+                                            <!--
+                                          <div
+                                            class="product-form product-variation-form product-color-swatch"
+                                          >
+                                            <label>Color:</label>
+                                            <div
+                                              class="d-flex align-items-center product-variations"
+                                            >
+                                              <a
+                                                href="#"
+                                                class="color"
+                                                style="background-color: #ffcc01"
+                                              ></a>
+                                              <a
+                                                href="#"
+                                                class="color"
+                                                style="background-color: #ca6d00"
+                                              ></a>
+                                              <a
+                                                href="#"
+                                                class="color"
+                                                style="background-color: #1c93cb"
+                                              ></a>
+                                              <a
+                                                href="#"
+                                                class="color"
+                                                style="background-color: #ccc"
+                                              ></a>
+                                              <a
+                                                href="#"
+                                                class="color"
+                                                style="background-color: #333"
+                                              ></a>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="product-form product-variation-form product-size-swatch"
+                                          >
+                                            <label class="mb-1">Size:</label>
+                                            <div
+                                              class="flex-wrap d-flex align-items-center product-variations"
+                                            >
+                                              <a href="#" class="size">Small</a>
+                                              <a href="#" class="size">Medium</a>
+                                              <a href="#" class="size">Large</a>
+                                              <a href="#" class="size">Extra Large</a>
+                                            </div>
+                                            <a href="#" class="product-variation-clean"
+                                              >Clean All</a
+                                            >
+                                          </div>
+                                            -->
+
+                                            {{--                      <div class="product-variation-price">--}}
+                                            {{--                        <span>{{ $product['price'] }}</span>--}}
+                                            {{--                      </div>--}}
+
+                                            @include('product.productSocialLinks')
+                                        </div>
+                                    </div>
+                                @endif
+
+
+                            </div>
+                            {{--                  @include('product.frequentlyBrought')--}}
+                            @include('product.tabProducts')
+
+                            {{--                @include('product.vendorProductSection')--}}
+                            {{--                @include('product.relatedProductSection')--}}
+                        </div>
+                        <!-- End of Main Content -->
+                        @include('product.productSidebar')
+                        <!-- End of Sidebar -->
                     </div>
-                  </div>
-                  @if(!$product || empty($product['title']))
-    <p>Nothing found.</p>
-@else
-    <div class="col-md-6 mb-4 mb-md-6">
-                    <div
-                      class="product-details"
-                      data-sticky-options="{'minWidth': 767}"
-                    >
-                      <h1 class="product-title">
-                          {{ $product['title'] }}
-                      </h1>
-                      <div class="product-bm-wrapper">
-                        <figure class="brand">
-                          <img
-                            src="{{ config('api.url') .$product['image'] }}"
-                            alt="Brand"
-                            width="102"
-                            height="48"
-                          />
-                        </figure>
-                        <div class="product-meta">
-                          <div class="product-categories">
-                            Category:
-                            <span class="product-category"
-                              ><a href="#">{{ $product['category'] }}</a></span
-                            >
-                          </div>
-                            <!--
-                          <div class="product-sku">
-                            SKU: <span>MS46891340</span>
-                          </div>
-                            -->
-                        </div>
-                      </div>
-
-                      <hr class="product-divider" />
-
-                      <div class="product-price">
-                        <ins class="new-price">৳ {{ $product['price'] }}</ins>
-                      </div>
-
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width: 80%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a
-                          href="#product-tab-reviews"
-                          class="rating-reviews scroll-to"
-                          >(3 Reviews)</a
-                        >
-                      </div>
-
-                      <div class="product-short-desc">
-                          {{ $product['details'] }}
-                      </div>
-
-                      <hr class="product-divider" />
-
-                        <!--
-                      <div
-                        class="product-form product-variation-form product-color-swatch"
-                      >
-                        <label>Color:</label>
-                        <div
-                          class="d-flex align-items-center product-variations"
-                        >
-                          <a
-                            href="#"
-                            class="color"
-                            style="background-color: #ffcc01"
-                          ></a>
-                          <a
-                            href="#"
-                            class="color"
-                            style="background-color: #ca6d00"
-                          ></a>
-                          <a
-                            href="#"
-                            class="color"
-                            style="background-color: #1c93cb"
-                          ></a>
-                          <a
-                            href="#"
-                            class="color"
-                            style="background-color: #ccc"
-                          ></a>
-                          <a
-                            href="#"
-                            class="color"
-                            style="background-color: #333"
-                          ></a>
-                        </div>
-                      </div>
-                      <div
-                        class="product-form product-variation-form product-size-swatch"
-                      >
-                        <label class="mb-1">Size:</label>
-                        <div
-                          class="flex-wrap d-flex align-items-center product-variations"
-                        >
-                          <a href="#" class="size">Small</a>
-                          <a href="#" class="size">Medium</a>
-                          <a href="#" class="size">Large</a>
-                          <a href="#" class="size">Extra Large</a>
-                        </div>
-                        <a href="#" class="product-variation-clean"
-                          >Clean All</a
-                        >
-                      </div>
-                        -->
-
-{{--                      <div class="product-variation-price">--}}
-{{--                        <span>{{ $product['price'] }}</span>--}}
-{{--                      </div>--}}
-
-                      @include('product.productSocialLinks')
-                    </div>
-                  </div>
-@endif
-
-                  
                 </div>
-{{--                  @include('product.frequentlyBrought')--}}
-                  @include('product.tabProducts')
-
-{{--                @include('product.vendorProductSection')--}}
-{{--                @include('product.relatedProductSection')--}}
-              </div>
-              <!-- End of Main Content -->
-                @include('product.productSidebar')
-                <!-- End of Sidebar -->
-              </div>
             </div>
-          </div>
-        </div>
-        <!-- End of Page Content -->
+            <!-- End of Page Content -->
+        @endif
       </main>
 @endsection
 
