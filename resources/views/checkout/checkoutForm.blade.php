@@ -15,15 +15,15 @@
 
             <div class="form-group">
                 <label>Name *</label>
-                <input type="text" class="form-control" name="name" required />
+                <input type="text" class="form-control" name="name" value="{{ session('name') ?? '' }}" required />
             </div>
             <div class="form-group">
                 <label>Mobile *</label>
-                <input type="text" class="form-control" name="mobile" required />
+                <input type="text" class="form-control" name="mobile" value="{{ session('mobile') ?? '' }}" required />
             </div>
             <div class="form-group">
                 <label>Address *</label>
-                <textarea class="form-control" name="address" required></textarea>
+                <textarea class="form-control" name="address" required>{{ session('address') ?? '' }}</textarea>
             </div>
             <div class="form-group">
                 <label>Shipping Cost *</label>
@@ -33,7 +33,7 @@
                 <label>Payment Method *</label>
                 <select class="form-control" name="payment_method" required>
                     <option value="Cash on Delivery">Cash on Delivery</option>
-                    <option value="Online Payment">Online Payment</option>
+{{--                    <option value="Online Payment">Online Payment</option>--}}
                 </select>
             </div>
             <div class="form-group">

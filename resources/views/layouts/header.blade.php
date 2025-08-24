@@ -12,12 +12,11 @@
                 <!-- End of Dropdown Menu -->
 
                 <a href="{{ route('contact-us') }}" class="d-lg-show">Contact Us</a>
-{{--                <a href="{{ route('my-account') }}" class="d-lg-show">My Account</a>--}}
                 @if(Session::has('user_id'))
                     <a
                         href="#"
                         class="d-lg-show"
-                    ><i class="w-icon-account"></i>{{ Session::has('name') ?? '' }}</a
+                    ><i class="w-icon-account"></i>{{ Session::get('name') ?? '' }}</a
                     >
                     <span class="delimiter d-lg-show">/</span>
                     <a

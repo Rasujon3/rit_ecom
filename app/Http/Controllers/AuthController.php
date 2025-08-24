@@ -104,10 +104,11 @@ class AuthController extends Controller
         }
 
         // Login success, store session
-        Session::put('user_id', $decode['id']);
-        Session::put('user_name', $decode['user_name']);
-        Session::put('mobile', $decode['mobile']);
-        Session::put('name', $decode['name']);
+        Session::put('user_id', $decode['id'] ?? '');
+        Session::put('user_name', $request->user_name);
+        Session::put('mobile', $decode['mobile'] ?? '');
+        Session::put('address', $decode['address'] ?? '');
+        Session::put('name', $decode['name'] ?? '');
         Session::put('image_url', $decode['image_url'] ?? '');
         Session::put('catagory_type', $decode['catagory_type'] ?? '0');
 
