@@ -4,7 +4,6 @@
         <div class="banner banner-fixed br-sm appear-animate">
             <figure>
                 <img
-{{--                    src="assets/images/demos/demo3/banners/3.jpg"--}}
                     src="{{ asset('assets/images/demos/demo3/banners/3.jpg') }}"
                     alt="banner"
                     width="925"
@@ -26,7 +25,7 @@
                     >
                 </h3>
                 <a
-                    href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Mobile']) }}"
                     class="btn btn-white btn-outline btn-rounded"
                 >Shop Now</a
                 >
@@ -94,6 +93,11 @@
                                     >(3 reviews)</a
                                     >
                                 </div>
+                                @if(isset($featuredProduct['pro_price']))
+                                    <div class="product-price">
+                                        PB: <ins class="new-price">৳ {{ $featuredProduct['pro_price'] }}</ins>
+                                    </div>
+                                @endif
                                 <div class="product-pa-wrapper">
                                     <div class="product-price">
                                         <ins class="new-price">৳ {{ $featuredProduct['Price'] }}</ins>

@@ -2,7 +2,6 @@
     <div class="col-md-6 mb-4">
         <figure class="banner banner-fixed br-sm">
             <img
-{{--                src="assets/images/demos/demo3/categories/10.jpg"--}}
                 src="{{ asset('assets/images/demos/demo3/categories/10.jpg') }}"
                 alt="Category Banner"
                 width="610"
@@ -21,7 +20,7 @@
                     XBox Gaming<br />Accessories
                 </h3>
                 <a
-                    href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Mobile']) }}"
                     class="btn btn-white btn-link btn-underline btn-icon-right"
                 >
                     Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -32,7 +31,6 @@
     <div class="col-md-6 mb-4">
         <figure class="banner banner-fixed br-sm">
             <img
-{{--                src="assets/images/demos/demo3/categories/11.jpg"--}}
                 src="{{ asset('assets/images/demos/demo3/categories/11.jpg') }}"
                 alt="Category Banner"
                 width="610"
@@ -49,7 +47,7 @@
                     Fashion Figure<br />Skate Sale
                 </h3>
                 <a
-                    href="{{ route('shopFullwidthBanner', ['category' => 'Mens Products']) }}"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Glossary']) }}"
                     class="btn btn-dark btn-link btn-underline btn-icon-right"
                 >
                     Shop Now<i class="w-icon-long-arrow-right"></i>

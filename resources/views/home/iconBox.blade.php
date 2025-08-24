@@ -18,7 +18,6 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-{{--                    src="assets/images/demos/demo3/categories/1.jpg"--}}
                     src="{{ asset('assets/images/demos/demo3/categories/1.jpg') }}"
                     alt="Category Banner"
                     width="400"
@@ -35,7 +34,7 @@
                         Tranding NIKE<br />Sneaker
                     </h3>
                     <a
-                        href="{{ route('shopFullwidthBanner', ['category' => 'Mens Products']) }}"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Glossary']) }}"
                         class="btn btn-white btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -47,7 +46,6 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-{{--                    src="assets/images/demos/demo3/categories/2.jpg"--}}
                     src="{{ asset('assets/images/demos/demo3/categories/2.jpg') }}"
                     alt="Category Banner"
                     width="400"
@@ -64,7 +62,7 @@
                         Vegan Friendly<br />Makeup
                     </h3>
                     <a
-                        href="{{ route('shopFullwidthBanner', ['category' => 'Health & Beauty']) }}"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Cosmetic']) }}"
                         class="btn btn-dark btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -76,7 +74,6 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-{{--                    src="assets/images/demos/demo3/categories/3.jpg"--}}
                     src="{{ asset('assets/images/demos/demo3/categories/3.jpg') }}"
                     alt="Category Banner"
                     width="400"
@@ -93,7 +90,7 @@
                         Fashion Apple<br />Accessories
                     </h3>
                     <a
-                        href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Mobile']) }}"
                         class="btn btn-white btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>
