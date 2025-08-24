@@ -134,9 +134,9 @@
                                                 >(3 Reviews)</a
                                                 >
                                             </div>
-                                            @if(isset($product['pro_price']))
+                                            @if(isset($product['point']))
                                                 <div class="product-price">
-                                                    PB: <ins class="new-price">৳ {{ $product['pro_price'] }}</ins>
+                                                    PB: <ins class="new-price">৳ {{ $product['point'] }}</ins>
                                                 </div>
                                             @endif
 
