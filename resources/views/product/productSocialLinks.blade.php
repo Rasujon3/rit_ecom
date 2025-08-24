@@ -27,7 +27,7 @@
     <div class="product-link-wrapper d-flex">
         <a
             href="javascript:void(0);"
-            class="btn-product-icon btn-wishlist w-icon-heart add-to-cart"
+            class="btn-product-icon btn-wishlist w-icon-heart add-to-wishlist"
             data-id="{{ $productId }}"
             data-title="{{ $product['title'] }}"
             data-image="{{ config('api.url') . $product['image'] }}"
@@ -37,7 +37,7 @@
             ></a>
         <a
             href="javascript:void(0);"
-            class="btn-product-icon btn-compare btn-icon-left w-icon-cart add-to-wishlist"
+            class="btn-product-icon btn-icon-left w-icon-cart add-to-cart"
             data-id="{{ $productId }}"
             data-title="{{ $product['title'] }}"
             data-image="{{ config('api.url') . $product['image'] }}"

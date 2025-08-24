@@ -22,6 +22,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/images/icons/favicon.png') }}" />
+    <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet"/>
 
     <!-- WebFont.js -->
     <script>
@@ -155,7 +156,7 @@
     <!-- End of Mobile Menu -->
 
     <!-- Start of Newsletter popup -->
-    @include('layouts.newsletterPopup')
+{{--    @include('layouts.newsletterPopup')--}}
     <!-- End of Newsletter popup -->
 
     <!-- Start of Quick View -->
@@ -163,10 +164,10 @@
     <!-- End of Quick view -->
 
     <!-- Plugin JS File -->
-    <script
-      data-cfasync="false"
-      src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
+{{--    <script--}}
+{{--      data-cfasync="false"--}}
+{{--      src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"--}}
+{{--    ></script>--}}
     <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/parallax/parallax.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/jquery.plugin/jquery.plugin.min.js') }}"></script>
@@ -174,9 +175,10 @@
     <script src="{{ asset('assets/vendor/zoom/jquery.zoom.js') }}"></script>
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/jquery.countdown/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+{{--    <script src="{{ asset('assets/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>--}}
 
     <!-- Main Js -->
     <script src="{{ asset('assets/js/main.min.js') }}"></script>
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
   </body>
 </html>

@@ -129,13 +129,14 @@
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 
 <script>
+    var redirectUrl = '/cart';
     $(document).on('click', '.remove-wishlist', function (e) {
         e.preventDefault();
 
         const productId = $(this).data('id');
         const row = $('#wishlist-row-' + productId);
 
-        if (!productId) return alert('Invalid product.');
+        if (!productId) return toastr.error('Invalid product.');
 
         $.ajax({
             url: '/wishlist/remove/' + productId,
@@ -145,14 +146,17 @@
             },
             success: function (response) {
                 if (response.status === 'success') {
-                    alert('Item removed from wishlist.');
+                    // alert('Item removed from wishlist.');
+                    toastr.success('✔️ ' + 'Item removed from wishlist.');
                     window.location.reload();
                 } else {
-                    alert(response.message);
+                    // alert(response.message);
+                    toastr.error(response.message);
                 }
             },
             error: function () {
-                alert('Failed to remove product from wishlist. Please try again.');
+                // alert('Failed to remove product from wishlist. Please try again.');
+                toastr.error('❌ Failed to remove product from wishlist. Please try again.');
             }
         });
     });
@@ -168,13 +172,14 @@
                 }
             },
             error: function () {
-                console.error("Failed to update cart.");
+                // console.error("Failed to update cart.");
+                toastr.error('Failed to update cart.');
             }
         });
     }
 
     $('.add-to-cart').one('click', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let el = $(this);
         let product_id = el.data('id');
 
@@ -192,19 +197,28 @@
                 },
                 success: function (response) {
                     if (response.status) {
-                        alert('✔️ ' + response.message);
+                        // alert('✔️ ' + response.message);
+                        // toastr.success(response.message);
+                        // window.location.reload();
                         el.addClass('disabled').css('pointer-events', 'none');
                         updateCartDropdown();
+
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
                     } else {
-                        alert('⚠️ ' + response.message);
+                        // alert('⚠️ ' + response.message);
+                        toastr.error('⚠️ ' + response.message);
                     }
                 },
                 error: function (xhr) {
-                    alert('❌ Failed to add to cart.');
+                    // alert('❌ Failed to add to cart.');
+                    toastr.error('❌ Failed to add to cart.');
                 }
             });
         } catch (error) {
-            alert('Something went wrong!!!');
+            // alert('Something went wrong!!!');
+            toastr.error('Something went wrong!!!');
         }
     });
 </script>

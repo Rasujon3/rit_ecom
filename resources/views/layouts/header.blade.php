@@ -160,7 +160,8 @@
                 }
             },
             error: function () {
-                console.error("Failed to update cart.");
+                // console.error("Failed to update cart.");
+                toastr.error('Failed to update cart.');
             }
         });
     }
@@ -187,17 +188,21 @@
                 success: function (res) {
                     if (res.status) {
                         updateCartDropdown();
-                        alert('Added to cart!');
+                        // alert('Added to cart!');
+                        toastr.success('Added to cart!');
                     } else {
-                        alert(res.message);
+                        // alert(res.message);
+                        toastr.error('⚠️ ' + res.message);
                     }
                 },
                 error: function () {
-                    alert('Failed to add product to cart.');
+                    // alert('Failed to add product to cart.');
+                    toastr.error('Failed to add product to cart.');
                 }
             });
         } catch (error) {
-            alert('Something went wrong!!!');
+            // alert('Something went wrong!!!');
+            toastr.error('Something went wrong!!!');
         }
     });
 
@@ -214,13 +219,16 @@
                 },
                 success: function () {
                     updateCartDropdown();
+                    toastr.success('Removed to cart!');
                 },
                 error: function () {
-                    alert('Could not remove item.');
+                    // alert('Could not remove item.');
+                    toastr.error('Could not remove item.');
                 }
             });
         } catch (error) {
-            alert('Something went wrong!!!');
+            // alert('Something went wrong!!!');
+            toastr.error('Something went wrong!!!');
         }
     });
 </script>

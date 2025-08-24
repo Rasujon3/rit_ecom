@@ -57,11 +57,11 @@
                             class="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                         ></a>
-                        <a
-                            href="#"
-                            class="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                        ></a>
+{{--                        <a--}}
+{{--                            href="#"--}}
+{{--                            class="btn-product-icon btn-compare w-icon-compare"--}}
+{{--                            title="Add to Compare"--}}
+{{--                        ></a>--}}
                     </div>
                     <div class="product-action">
                         <a
@@ -116,11 +116,11 @@
                             class="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                         ></a>
-                        <a
-                            href="#"
-                            class="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                        ></a>
+{{--                        <a--}}
+{{--                            href="#"--}}
+{{--                            class="btn-product-icon btn-compare w-icon-compare"--}}
+{{--                            title="Add to Compare"--}}
+{{--                        ></a>--}}
                     </div>
                     <div class="product-action">
                         <a
@@ -180,11 +180,11 @@
                             class="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                         ></a>
-                        <a
-                            href="#"
-                            class="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                        ></a>
+{{--                        <a--}}
+{{--                            href="#"--}}
+{{--                            class="btn-product-icon btn-compare w-icon-compare"--}}
+{{--                            title="Add to Compare"--}}
+{{--                        ></a>--}}
                     </div>
                     <div class="product-action">
                         <a
@@ -248,11 +248,11 @@
                             class="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                         ></a>
-                        <a
-                            href="#"
-                            class="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                        ></a>
+{{--                        <a--}}
+{{--                            href="#"--}}
+{{--                            class="btn-product-icon btn-compare w-icon-compare"--}}
+{{--                            title="Add to Compare"--}}
+{{--                        ></a>--}}
                     </div>
                     <div class="product-action">
                         <a

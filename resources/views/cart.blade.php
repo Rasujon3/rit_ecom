@@ -164,6 +164,7 @@
             },
             error: function () {
                 alert('Could not remove item.');
+                toastr.error('❌ Could not remove item.');
             }
         });
     });

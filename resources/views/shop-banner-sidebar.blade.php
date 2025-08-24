@@ -53,7 +53,7 @@
                                              data-price="{{ $product['Price'] }}"
                                              data-point="{{ $product['point'] ?? 0 }}"
                                              title="Wishlist"></a>
-                                          <a href="#" class="btn-product-icon btn-compare w-icon-compare" title="Compare"></a>
+{{--                                          <a href="#" class="btn-product-icon btn-compare w-icon-compare" title="Compare"></a>--}}
                                           <a href="#" class="btn-product-icon btn-quickview w-icon-search" title="Quick View"></a>
                                       </div>
                                   </figure>
@@ -117,14 +117,17 @@
                 },
                 success: function (response) {
                     if (response.status) {
-                        alert('✔️ ' + response.message);
+                        // alert('✔️ ' + response.message);
+                        toastr.success('✔️ ' + response.message);
                         el.addClass('disabled').css('pointer-events', 'none');
                     } else {
-                        alert('⚠️ ' + response.message);
+                        // alert('⚠️ ' + response.message);
+                        toastr.error('⚠️ ' + response.message);
                     }
                 },
                 error: function (xhr) {
-                    alert('❌ Failed to add to wishlist.');
+                    // alert('❌ Failed to add to wishlist.');
+                    toastr.error('❌ Failed to add to wishlist.');
                 }
             });
         });
@@ -140,7 +143,8 @@
                     }
                 },
                 error: function () {
-                    console.error("Failed to update cart.");
+                    // console.error("Failed to update cart.");
+                    toastr.error('Failed to update cart.');
                 }
             });
         }
@@ -164,19 +168,23 @@
                     },
                     success: function (response) {
                         if (response.status) {
-                            alert('✔️ ' + response.message);
+                            // alert('✔️ ' + response.message);
+                            toastr.success('✔️ ' + response.message);
                             el.addClass('disabled').css('pointer-events', 'none');
                             updateCartDropdown();
                         } else {
-                            alert('⚠️ ' + response.message);
+                            // alert('⚠️ ' + response.message);
+                            toastr.error('⚠️ ' + response.message);
                         }
                     },
                     error: function (xhr) {
-                        alert('❌ Failed to add to cart.');
+                        // alert('❌ Failed to add to cart.');
+                        toastr.error('❌ Failed to add to cart.');
                     }
                 });
             } catch (error) {
-                alert('Something went wrong!!!');
+                // alert('Something went wrong!!!');
+                toastr.error('Something went wrong!!!');
             }
         });
     });
