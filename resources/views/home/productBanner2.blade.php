@@ -74,7 +74,7 @@
                                 <div class="product-action">
                                     <a
                                         href="{{ route('product-details', ['product_id' => $featuredProduct['Id']]) }}"
-                                        class="btn-product btn-quickview"
+                                        class="btn-product"
                                         title="Quick View"
                                     >Quick View</a
                                     >
@@ -93,9 +93,9 @@
                                     >(3 reviews)</a
                                     >
                                 </div>
-                                @if(isset($featuredProduct['pro_price']))
+                                @if(isset($featuredProduct['point']))
                                     <div class="product-price">
-                                        PB: <ins class="new-price">৳ {{ $featuredProduct['pro_price'] }}</ins>
+                                        PB: <ins class="new-price">৳ {{ $featuredProduct['point'] }}</ins>
                                     </div>
                                 @endif
                                 <div class="product-pa-wrapper">

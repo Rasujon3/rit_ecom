@@ -77,7 +77,7 @@
                                     <div class="product-action">
                                         <a
                                             href="{{ route('product-details', ['product_id' => $arrivalProduct['Id']]) }}"
-                                            class="btn-product btn-quickview"
+                                            class="btn-product"
                                             title="Quick View"
                                         >Quick View</a
                                         >
@@ -98,9 +98,9 @@
                                         >(3 reviews)</a
                                         >
                                     </div>
-                                    @if(isset($arrivalProduct['pro_price']))
+                                    @if(isset($arrivalProduct['point']))
                                         <div class="product-price">
-                                            PB: <ins class="new-price">৳ {{ $arrivalProduct['pro_price'] }}</ins>
+                                            PB: <ins class="new-price">৳ {{ $arrivalProduct['point'] }}</ins>
                                         </div>
                                     @endif
                                     <div class="product-pa-wrapper">
