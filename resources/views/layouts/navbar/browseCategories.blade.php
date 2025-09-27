@@ -8,6 +8,9 @@
 
     <div class="dropdown-box">
         <ul class="menu vertical-menu category-menu" style="max-height: 510px; overflow-y: auto;">
+            @php
+                $firstCat = '';
+            @endphp
             @if(count($categories) > 0)
                 @php
                     $firstCat = $categories[0]['Category'] ?? '';

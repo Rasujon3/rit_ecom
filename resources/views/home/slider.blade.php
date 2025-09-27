@@ -25,7 +25,7 @@
                                 Featured
                             </h5>
                             <h3
-                                class="banner-title text-white text-capitalize ls-25 lh-1 slide-animate"
+                                class="banner-title text-capitalize ls-25 lh-1 slide-animate"
                                 data-animation-options="{'name': 'fadeInRightShorter', 'duration': '.5s', 'delay': '.5s'}"
                             >
                                 {{ $slide['Title'] ?? 'Untitled' }}
