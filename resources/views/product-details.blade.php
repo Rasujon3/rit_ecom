@@ -280,8 +280,9 @@
             });
         }
 
-        $('.add-to-cart').one('click', function (e) {
-            e.preventDefault();
+        // $('.add_to_cart').one('click', function (e) {
+        $('#add_to_cart').one('click', function (e) {
+            // e.preventDefault();
             let el = $(this);
             let product_id = el.data('id');
 
@@ -298,19 +299,22 @@
                         point: el.data('point')
                     },
                     success: function (response) {
-                        if (response.status) {
+                        if (response.status === true) {
+                            console.log('dfasdf', response);
                             // alert('✔️ ' + response.message);
-                            toastr.success('✔️ ' + 'Added to cart!');
+                            toastr.success('Added to cart!');
                             el.addClass('disabled').css('pointer-events', 'none');
                             updateCartDropdown();
-                        } else {
-                            // alert('⚠️ ' + response.message);
-                            toastr.error('⚠️ ' + response.message);
+                        }
+                        if (response.status === false) {
+                            console.log('false', response);
+                            // alert('✔️ ' + response.message);
+                            toastr.error(response.message);
                         }
                     },
                     error: function (xhr) {
                         // alert('❌ Failed to add to cart.');
-                        toastr.error('❌ Failed to add to cart.');
+                        toastr.error('Failed to add to cart.');
                     }
                 });
             } catch (error) {
