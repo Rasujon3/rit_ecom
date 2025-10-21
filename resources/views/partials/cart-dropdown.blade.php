@@ -1,7 +1,7 @@
 @php
     $cartItems = session('cart', []);
     $cartCount = count($cartItems);
-    $cartSubtotal = array_sum(array_column($cartItems, 'price'));
+    $cartSubtotal = array_sum(array_column($cartItems, 'total_price'));
 @endphp
 
 <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
@@ -24,7 +24,7 @@
                     <div class="product-detail">
                         <a href="{{ route('product-details', ['product_id' => $item['id']]) }}" class="product-name">{{ $item['title'] }}</a>
                         <div class="price-box">
-                            <span class="product-quantity">1</span>
+                            <span class="product-quantity">{{ $item['quantity'] }}</span>
                             <span class="product-price">৳{{ $item['price'] }}</span>
                         </div>
                     </div>

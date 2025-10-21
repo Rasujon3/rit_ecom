@@ -15,9 +15,9 @@
                     <tr class="bb-no">
                     <td class="product-name">
                         {{ $item['title'] }} <i class="fas fa-times"></i>
-                        <span class="product-quantity">1</span>
+                        <span class="product-quantity">{{ $item['quantity'] }}</span>
                     </td>
-                    <td class="product-total">৳ {{ $item['price'] }}</td>
+                    <td class="product-total">৳ {{ $item['total_price'] }}</td>
                 </tr>
                 @endforeach
                 <tr class="cart-subtotal bb-no">

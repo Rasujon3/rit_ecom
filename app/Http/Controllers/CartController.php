@@ -21,7 +21,18 @@ class CartController extends Controller
 
         // 🔁 Check if product already in cart
         if (array_key_exists($productId, $cart)) {
-            return response()->json(['status' => false, 'message' => 'Already in cart.'], 409);
+            $cart[$productId]['quantity'] = ($cart[$productId]['quantity'] ?? 1) + 1;
+
+            // price update → total price হিসাব করে রাখবে
+            $cart[$productId]['total_price'] = $cart[$productId]['quantity'] * $cart[$productId]['price'];
+
+            Session::put('cart', $cart);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Quantity increased successfully',
+                'cart' => $cart
+            ]);
         }
 
         // ✅ Remove from wishlist if exists
@@ -38,6 +49,8 @@ class CartController extends Controller
             'image' => $productData['image'],
             'price' => $productData['price'],
             'point' => $productData['point'] ?? 0,
+            'quantity' => 1,
+            'total_price' => $productData['price'],
         ];
 
         Session::put('cart', $cart);

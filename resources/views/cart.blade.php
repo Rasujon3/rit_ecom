@@ -26,6 +26,7 @@
                       <th></th>
                       <th class="product-price"><span>Price</span></th>
                       <th class="product-quantity"><span>Quantity</span></th>
+                      <th class="product-quantity"><span>PB</span></th>
                       <th class="product-subtotal"><span>Subtotal</span></th>
                     </tr>
                   </thead>
@@ -58,10 +59,13 @@
                         <span class="amount">৳ {{ $item['price'] }}</span>
                       </td>
                       <td class="product-quantity">
-                          <span class="amount">X 1</span>
+                          <span class="amount">X {{ $item['quantity'] }}</span>
+                      </td>
+                      <td class="product-quantity">
+                          <span class="amount">৳ {{ $item['point'] }}</span>
                       </td>
                       <td class="product-subtotal">
-                        <span class="amount">৳ {{ $item['price'] }}</span>
+                        <span class="amount">৳ {{ $item['total_price'] }}</span>
                       </td>
                     </tr>
                   @empty

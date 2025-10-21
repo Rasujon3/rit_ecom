@@ -118,7 +118,7 @@ class PageController extends Controller
     {
         $cart = session()->get('cart', []);
         $cartCount = count($cart);
-        $cartSubtotal = array_sum(array_column($cart, 'price'));
+        $cartSubtotal = array_sum(array_column($cart, 'total_price'));
         return view('checkout', compact('cart', 'cartCount', 'cartSubtotal'));
     }
 
@@ -129,7 +129,7 @@ class PageController extends Controller
         $cartSubtotal = 0;
 
         if ($cartCount > 0) {
-            $cartSubtotal = array_sum(array_column($cart, 'price'));
+            $cartSubtotal = array_sum(array_column($cart, 'total_price'));
         }
 
         return view('cart', compact('cart', 'cartCount', 'cartSubtotal'));
@@ -172,12 +172,12 @@ class PageController extends Controller
             $response = Http::asForm()->post(config('api.url') . 'api/cart_insert.php', [
                 'unique_id' => $request->unique_id ?? '',
                 'product_id' => $item['id'] ?? '',
-                'quantity' => 1,
+                'quantity' => $item['quantity'],
                 'point' => $item['point'] ?? 0,
                 'size' => '',
                 'color' => '',
                 'special_price' => 0,
-                'money' => $item['price'] ?? '',
+                'money' => $item['total_price'] ?? 0,
                 'device_id' => $request->device_id ?? '',
                 'user_id' => $request->user_id ?? '',
                 'ship_cost' => $request->ship_cost ?? 0,
