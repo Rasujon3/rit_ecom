@@ -24,38 +24,6 @@
         </div>
     </div>
     <span class="divider d-xs-show"></span>
-{{--    <div class="product-link-wrapper d-flex">--}}
-{{--        <a--}}
-{{--            href="javascript:void(0);"--}}
-{{--            class="btn-product-icon btn-wishlist w-icon-heart add-to-wishlist"--}}
-{{--            data-id="{{ $productId }}"--}}
-{{--            data-title="{{ $product['title'] }}"--}}
-{{--            data-image="{{ config('api.url') . $product['image'] }}"--}}
-{{--            data-price="{{ $product['price'] }}"--}}
-{{--            data-point="{{ $product['point'] ?? 0 }}"--}}
-{{--        ><span></span--}}
-{{--            ></a>--}}
-{{--        <a--}}
-{{--            href="javascript:void(0);"--}}
-{{--            class="btn-product-icon btn-icon-left w-icon-cart add-to-cart"--}}
-{{--            data-id="{{ $productId }}"--}}
-{{--            data-title="{{ $product['title'] }}"--}}
-{{--            data-image="{{ config('api.url') . $product['image'] }}"--}}
-{{--            data-price="{{ $product['price'] }}"--}}
-{{--            data-point="{{ $product['point'] ?? 0 }}"--}}
-{{--        ><span></span--}}
-{{--            ></a>--}}
-{{--    </div>--}}
-    <a href="javascript:void(0);"
-       class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart add-to-cart"
-       data-id="{{ $productId }}"
-       data-title="{{ $product['title'] }}"
-       data-image="{{ config('api.url') . $product['image'] }}"
-       data-price="{{ $product['price'] }}"
-       data-point="{{ $product['point'] ?? 0 }}"
-    >
-        Add to cart
-    </a>
     {{--    <div class="product-link-wrapper d-flex">--}}
     {{--        <a--}}
     {{--            href="javascript:void(0);"--}}
